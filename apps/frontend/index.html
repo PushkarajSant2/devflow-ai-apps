@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DevFlow AI Sample App</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">DevFlow AI Phase 1</p>
+          <h1>Checkout workload for GitOps and AI-Ops demos</h1>
+          <p class="lede">
+            Create orders, break the payment dependency, recover it, and watch the app produce the signals a platform needs.
+          </p>
+        </div>
+        <div class="status-grid">
+          <article class="status-card">
+            <span>Payment API</span>
+            <strong id="payment-status">checking...</strong>
+          </article>
+          <article class="status-card">
+            <span>Order API</span>
+            <strong id="order-status">checking...</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="panel">
+          <h2>Create order</h2>
+          <label>
+            Customer ID
+            <input id="customer-id" value="cust_001" />
+          </label>
+          <label>
+            SKU
+            <input id="sku" value="platform-course" />
+          </label>
+          <div class="split">
+            <label>
+              Quantity
+              <input id="quantity" type="number" min="1" value="1" />
+            </label>
+            <label>
+              Price
+              <input id="price" type="number" min="1" value="1499" />
+            </label>
+          </div>
+          <button id="create-order">Create order</button>
+        </div>
+
+        <div class="panel">
+          <h2>Incident controls</h2>
+          <p class="muted">Use these buttons later to demonstrate alerts, logs, metrics, and AI root-cause analysis.</p>
+          <div class="button-row">
+            <button id="break-payment" class="danger">Break payment</button>
+            <button id="recover-payment" class="success">Recover</button>
+          </div>
+          <button id="refresh-status" class="secondary">Refresh status</button>
+        </div>
+
+        <div class="panel output-panel">
+          <h2>Last response</h2>
+          <pre id="output">{}</pre>
+        </div>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
